@@ -1,8 +1,7 @@
 # EA-Groupe-MINIGAZ
 Tableau de bord d'analyse des entretiens annuels
 
-> **Statut :** Portfolio - Projet de démonstration
-> **Lien vers le rapport interactif :"Disponible sur demande"]
+> **Statut :** Portfolio - Projet de démonstration - Le dépôt GitHub contient la structure technique (DAX, Modélisation). Pour visualiser le rapport interactif avec les données, veuillez cliquer sur ce lien [Lien Power BI Service].
 
 ## 🇫🇷 Version Française
 
