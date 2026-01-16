@@ -15,9 +15,9 @@ Le Groupe MINIGAZ utilise un outil Saas pour ses entretiens annuels et professio
 - **DAX (Calculs Avancés) :** Création de mesures complexes (Time Intelligence, YTD, Rank, calculs de marges dynamiques).
 
 ### ☁️ Compétences Power BI Service (Architecture & Diffusion)
-- **Gouvernance :** Organisation du rapport en espaces de travail (Workspaces).
-- **Sécurité :** Mise en place de la sécurité au niveau des lignes (RLS) pour filtrer les données par région.
-- **Automatisation :** Configuration des passerelles (Gateways) et planification des rafraîchissements.
+- **Gouvernance : Le rapport original non anonymisé a été placé sur mon espace de travail professionnel privé uniquement accessible via identification SSO sur mail professionnel aux personnes autorisées.
+- **Sécurité : ** Dans ce même fichier,  mise en place de la sécurité au niveau des lignes (RLS) pour filtrer les données. Par exemple l'équipe RH de l'entité X ne voyait que les lignes correspondant à son entité X sur Pbi service. 
+- **Automatisation :** Configuration de la passerelle locale et planification des rafraîchissements.
 
 ### 📈 Insights & Recommandations
 C'est ici que vous prouvez votre valeur de consultante :
