@@ -1,0 +1,227 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "89a83e30558c9e610b9e",
+  "position": {
+    "x": 11.028045770697778,
+    "y": 559.97965746765385,
+    "z": 5000,
+    "height": 159.29399446563457,
+    "width": 596.73981003664642,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_collaborateurs"
+                    }
+                  },
+                  "Property": "Nom"
+                }
+              },
+              "queryRef": "Dim_collaborateurs.Nom",
+              "nativeQueryRef": "Nom1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Commentaire du collaborateur (Q2)"
+                }
+              },
+              "queryRef": "Formulaire questions.Commentaire du collaborateur (Q2)",
+              "nativeQueryRef": "Commentaire du collaborateur (Q2)1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Commentaire du manager (Q2)"
+                }
+              },
+              "queryRef": "Formulaire questions.Commentaire du manager (Q2)",
+              "nativeQueryRef": "Commentaire du manager (Q2)1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Commentaire du collaborateur (Q3)"
+                }
+              },
+              "queryRef": "Formulaire questions.Commentaire du collaborateur (Q3)",
+              "nativeQueryRef": "Commentaire du collaborateur (Q3)1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Commentaire du manager (Q3)"
+                }
+              },
+              "queryRef": "Formulaire questions.Commentaire du manager (Q3)",
+              "nativeQueryRef": "Commentaire du manager (Q3)1"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_collaborateurs"
+                  }
+                },
+                "Property": "Nom"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#177BB0'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

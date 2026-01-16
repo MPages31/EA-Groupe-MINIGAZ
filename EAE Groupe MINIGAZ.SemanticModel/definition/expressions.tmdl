@@ -1,0 +1,56 @@
+expression Formulaire =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\myriam.pages\OneDrive - Butagaz\Documents\Personnel\Fichier global anonymisé EAE 2025.xlsx"), null, true),
+		    Formulaire_Sheet = Source{[Item="Formulaire",Kind="Sheet"]}[Data],
+		    #"En-têtes promus" = Table.PromoteHeaders(Formulaire_Sheet, [PromoteAllScalars=true]),
+		    #"Valeur remplacée" = Table.ReplaceValue(#"En-têtes promus","",null,Replacer.ReplaceValue,{"Complément 1"}),
+		    #"Personnalisée ajoutée" = Table.AddColumn(#"Valeur remplacée", "Personnalisé", each "CONTENU MASQUÉ"),
+		    #"Colonnes supprimées" = Table.RemoveColumns(#"Personnalisée ajoutée",{"Réponse du manager (Q13)"}),
+		    #"Colonnes renommées" = Table.RenameColumns(#"Colonnes supprimées",{{"Personnalisé", "Réponse du manager (Q13)"}}),
+		    #"Personnalisée ajoutée1" = Table.AddColumn(#"Colonnes renommées", "Personnalisé", each "CONTENU MASQUÉ"),
+		    #"Colonnes supprimées1" = Table.RemoveColumns(#"Personnalisée ajoutée1",{"Réponse du collaborateur (Q14)"}),
+		    #"Colonnes renommées1" = Table.RenameColumns(#"Colonnes supprimées1",{{"Personnalisé", "Réponse du collaborateur (Q14)"}}),
+		    #"Personnalisée ajoutée2" = Table.AddColumn(#"Colonnes renommées1", "Personnalisé", each "CONTENU MASQUÉ"),
+		    #"Colonnes supprimées2" = Table.RemoveColumns(#"Personnalisée ajoutée2",{"Commentaire du collaborateur (Q1)"}),
+		    #"Colonnes renommées2" = Table.RenameColumns(#"Colonnes supprimées2",{{"Personnalisé", "Commentaire du collaborateur (Q1)"}}),
+		    #"Personnalisée ajoutée3" = Table.AddColumn(#"Colonnes renommées2", "Personnalisé", each "CONTENU MASQUÉ"),
+		    #"Colonnes supprimées3" = Table.RemoveColumns(#"Personnalisée ajoutée3",{"Commentaire du manager (Q1)"}),
+		    #"Colonnes renommées3" = Table.RenameColumns(#"Colonnes supprimées3",{{"Personnalisé", "Commentaire du manager (Q1)"}}),
+		    #"Personnalisée ajoutée4" = Table.AddColumn(#"Colonnes renommées3", "Personnalisé", each "CONTENU MASQUE"),
+		    #"Colonnes supprimées4" = Table.RemoveColumns(#"Personnalisée ajoutée4",{"Commentaire du manager (Q2)"}),
+		    #"Colonnes renommées4" = Table.RenameColumns(#"Colonnes supprimées4",{{"Personnalisé", "Commentaire du manager (Q2)"}}),
+		    #"Personnalisée ajoutée5" = Table.AddColumn(#"Colonnes renommées4", "Personnalisé", each "CONTENU MASQUE"),
+		    #"Colonnes supprimées5" = Table.RemoveColumns(#"Personnalisée ajoutée5",{"Commentaire du collaborateur (Q3)"}),
+		    #"Colonnes renommées5" = Table.RenameColumns(#"Colonnes supprimées5",{{"Personnalisé", "Commentaire du collaborateur (Q3)"}}),
+		    #"Personnalisée ajoutée6" = Table.AddColumn(#"Colonnes renommées5", "Personnalisé", each "CONTENU MASQUE"),
+		    #"Colonnes supprimées6" = Table.RemoveColumns(#"Personnalisée ajoutée6",{"Commentaire du manager (Q3)"}),
+		    #"Colonnes renommées6" = Table.RenameColumns(#"Colonnes supprimées6",{{"Personnalisé", "Commentaire du manager (Q3)"}}),
+		    #"Personnalisée ajoutée7" = Table.AddColumn(#"Colonnes renommées6", "Personnalisé", each "CONTENU MASQUE"),
+		    #"Colonnes supprimées7" = Table.RemoveColumns(#"Personnalisée ajoutée7",{"Commentaire du collaborateur (Q2)"}),
+		    #"Colonnes renommées7" = Table.RenameColumns(#"Colonnes supprimées7",{{"Personnalisé", "Commentaire du collaborateur (Q2)"}}),
+		    #"Personnalisée ajoutée8" = Table.AddColumn(#"Colonnes renommées7", "Personnalisé", each "CONTENU MASQUE"),
+		    #"Colonnes supprimées8" = Table.RemoveColumns(#"Personnalisée ajoutée8",{"Réponse du collaborateur (Q4)"}),
+		    #"Colonnes renommées8" = Table.RenameColumns(#"Colonnes supprimées8",{{"Personnalisé", "Réponse du collaborateur (Q4)"}})
+		in
+		    #"Colonnes renommées8"
+	lineageTag: 30bbaa95-2d4e-4fd8-8a3d-c20e8d977586
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression 'Tableaux 2' =
+		let
+		    Source = Excel.Workbook(File.Contents("C:\Users\myriam.pages\OneDrive - Butagaz\Documents\Personnel\Fichier global anonymisé EAE 2025.xlsx"), null, true),
+		    #"Tableaux 2_Sheet" = Source{[Item="Tableaux 2",Kind="Sheet"]}[Data],
+		    #"En-têtes promus" = Table.PromoteHeaders(#"Tableaux 2_Sheet", [PromoteAllScalars=true]),
+		    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Statut", type text}, {"Prénom collaborateur", type text}, {"Nom collaborateur", type text}, {"Matricule collaborateur", Int64.Type}, {"Rôle collaborateur", type text}, {"Date d'embauche collaborateur", type date}, {"Catégorie contrat collaborateur", type text}, {"Entreprise collaborateur", type text}, {"Service collaborateur", type text}, {"Direction collaborateur", type text}, {"Nom manager", type text}, {"Matricule manager", Int64.Type}, {"Rôle manager", type text}, {"Date d'embauche manager", type date}, {"Catégorie contrat manager", type text}, {"Entreprise manager", type text}, {"Service manager", type text}, {"Direction manager", type text}, {"Etat collaborateur", type text}, {"Date de signature du collaborateur", type date}, {"Etat manager", type text}, {"Date de signature du manager", type date}, {"Demande métier", type text}, {"Catégorie de formation métier", type text}, {"Avis collaborateur", type text}, {"Action de développement externe (formation etc)", type text}, {"Catégorie de formation externe", type text}, {"Avis collaborateur_1", type text}}),
+		    #"Autres colonnes supprimées" = Table.SelectColumns(#"Type modifié",{"Matricule collaborateur", "Demande métier", "Catégorie de formation métier", "Avis collaborateur", "Action de développement externe (formation etc)", "Catégorie de formation externe", "Avis collaborateur_1"})
+		in
+		    #"Autres colonnes supprimées"
+	lineageTag: c30caf93-635c-4e25-8b3b-dd02f95f068d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

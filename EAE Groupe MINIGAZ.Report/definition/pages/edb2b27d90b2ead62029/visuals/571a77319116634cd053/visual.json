@@ -1,0 +1,224 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "571a77319116634cd053",
+  "position": {
+    "x": 445.12952754351574,
+    "y": 184.30302472140724,
+    "z": 4000,
+    "height": 280.22682121383559,
+    "width": 822.35794071598673,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_collaborateurs"
+                    }
+                  },
+                  "Property": "Nom"
+                }
+              },
+              "queryRef": "Dim_collaborateurs.Nom",
+              "nativeQueryRef": "Nom1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_collaborateurs"
+                    }
+                  },
+                  "Property": "Entreprise collaborateur"
+                }
+              },
+              "queryRef": "Dim_collaborateurs.Entreprise collaborateur",
+              "nativeQueryRef": "Entreprise collaborateur1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_collaborateurs"
+                    }
+                  },
+                  "Property": "Direction collaborateur"
+                }
+              },
+              "queryRef": "Dim_collaborateurs.Direction collaborateur",
+              "nativeQueryRef": "Direction collaborateur1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_collaborateurs"
+                    }
+                  },
+                  "Property": "Service collaborateur"
+                }
+              },
+              "queryRef": "Dim_collaborateurs.Service collaborateur",
+              "nativeQueryRef": "Service collaborateur1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q11)"
+                }
+              },
+              "queryRef": "Formulaire questions.Réponse du collaborateur (Q11)",
+              "nativeQueryRef": "Réponse du collaborateur (Q11)1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Formulaire questions"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q12)"
+                }
+              },
+              "queryRef": "Formulaire questions.Réponse du collaborateur (Q12)",
+              "nativeQueryRef": "Réponse du collaborateur (Q12)1"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#177BB0'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

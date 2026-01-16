@@ -1,0 +1,24 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Formulaire","Objectifs de l'année écoulée","Objectifs de l'année suivante","Tableaux 1","Tableaux 2","Tableaux 3","Dim_collaborateurs","Formulaire questions","Form question - influenceurs clés"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Objectifs de l''année écoulée'
+ref table 'Objectifs de l''année suivante'
+ref table 'Tableaux 1'
+ref table 'Tableaux 3'
+ref table Dim_collaborateurs
+ref table 'Formulaire questions'
+ref table 'Form question - influenceurs clés'
+
+ref cultureInfo fr-FR
+

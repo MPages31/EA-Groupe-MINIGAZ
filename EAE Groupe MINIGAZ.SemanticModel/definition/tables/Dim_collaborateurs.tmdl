@@ -1,0 +1,204 @@
+table Dim_collaborateurs
+	lineageTag: 31eab112-5baa-4cea-8d90-395d0c5c313b
+
+	column 'Matricule collaborateur'
+		dataType: string
+		lineageTag: 19b85481-e3f6-4b9e-ad6f-2cfc0a809408
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column Statut
+		dataType: string
+		lineageTag: 9c6bbf4e-495c-484f-8a2c-4539a264822b
+		summarizeBy: none
+		sourceColumn: Statut
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Prénom collaborateur'
+		dataType: string
+		lineageTag: f736af51-62d3-4ecb-941b-d21a4aee02ac
+		summarizeBy: none
+		sourceColumn: Prénom collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nom collaborateur'
+		dataType: string
+		lineageTag: fc63ce94-10e0-4af8-9d45-13b1c3494db0
+		summarizeBy: none
+		sourceColumn: Nom collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rôle collaborateur'
+		dataType: string
+		lineageTag: 3dfb98db-129d-4a9a-acc7-cda7ab44013e
+		summarizeBy: none
+		sourceColumn: Rôle collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date d''embauche collaborateur'
+		dataType: string
+		lineageTag: 269e07a6-13c6-4b78-9723-8bc75d2f0fff
+		summarizeBy: none
+		sourceColumn: Date d'embauche collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Catégorie contrat collaborateur'
+		dataType: string
+		lineageTag: 862e5fdc-38bd-456f-bd5f-f1154256ecab
+		summarizeBy: none
+		sourceColumn: Catégorie contrat collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entreprise collaborateur'
+		dataType: string
+		lineageTag: 5372cc3c-7de8-4dc2-bb18-0b167c46bd71
+		summarizeBy: none
+		sourceColumn: Entreprise collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service collaborateur'
+		dataType: string
+		lineageTag: 6f971067-24cc-4021-af9b-e8b15f3b594c
+		summarizeBy: none
+		sourceColumn: Service collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direction collaborateur'
+		dataType: string
+		lineageTag: 8e0bf3dc-6f54-40a8-a281-9dc952a01f52
+		summarizeBy: none
+		sourceColumn: Direction collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Nom manager'
+		dataType: string
+		lineageTag: b4396c6d-ad72-4ddc-b28d-2205be8e5491
+		summarizeBy: none
+		sourceColumn: Nom manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Matricule manager'
+		dataType: string
+		lineageTag: 2b35e324-04b5-44a5-b1c3-8863f6af68eb
+		summarizeBy: none
+		sourceColumn: Matricule manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rôle manager'
+		dataType: string
+		lineageTag: 7fa0de44-b51c-48f5-baac-a5fb280f049d
+		summarizeBy: none
+		sourceColumn: Rôle manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date d''embauche manager'
+		dataType: string
+		lineageTag: 1caaeba0-18fe-4c03-b80d-4c18b06baab9
+		summarizeBy: none
+		sourceColumn: Date d'embauche manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Catégorie contrat manager'
+		dataType: string
+		lineageTag: e91a2db3-c90d-4094-998c-e28f9ba2bf10
+		summarizeBy: none
+		sourceColumn: Catégorie contrat manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entreprise manager'
+		dataType: string
+		lineageTag: eefba08a-2123-440e-a043-9f59f3f271b9
+		summarizeBy: none
+		sourceColumn: Entreprise manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Service manager'
+		dataType: string
+		lineageTag: fbd62b59-3e7d-4699-b5e4-e5b29d58095f
+		summarizeBy: none
+		sourceColumn: Service manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direction manager'
+		dataType: string
+		lineageTag: b1fb6e08-a1b7-4bd2-bb28-2da3fe80a0e1
+		summarizeBy: none
+		sourceColumn: Direction manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etat collaborateur'
+		dataType: string
+		lineageTag: 5f475ca6-d81d-49ec-80df-1fe9d0dbed2d
+		summarizeBy: none
+		sourceColumn: Etat collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date de signature du collaborateur'
+		dataType: string
+		lineageTag: 69a91161-0c14-4d12-a771-899e5ec15630
+		summarizeBy: none
+		sourceColumn: Date de signature du collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Etat manager'
+		dataType: string
+		lineageTag: b403ca7e-4097-49a8-ac52-baa0469781c0
+		summarizeBy: none
+		sourceColumn: Etat manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date de signature du manager'
+		dataType: string
+		lineageTag: 34745cb4-f638-4de9-abb8-0c7a547a319f
+		summarizeBy: none
+		sourceColumn: Date de signature du manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nom
+		dataType: string
+		lineageTag: 163f28ca-172c-47f3-ac31-758443883cb0
+		summarizeBy: none
+		sourceColumn: Nom
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_collaborateurs = m
+		mode: import
+		source =
+				let
+				    Source = Formulaire,
+				    #"Lignes filtrées" = Table.SelectRows(Source, each true),
+				    #"Autres colonnes supprimées" = Table.SelectColumns(#"Lignes filtrées",{"Statut", "Prénom collaborateur", "Nom collaborateur", "Matricule collaborateur", "Rôle collaborateur", "Date d'embauche collaborateur", "Catégorie contrat collaborateur", "Entreprise collaborateur", "Service collaborateur", "Direction collaborateur", "Nom manager", "Matricule manager", "Rôle manager", "Date d'embauche manager", "Catégorie contrat manager", "Entreprise manager", "Service manager", "Direction manager", "Etat collaborateur", "Date de signature du collaborateur", "Etat manager", "Date de signature du manager"}),
+				    #"Colonne fusionnée insérée" = Table.AddColumn(#"Autres colonnes supprimées", "Fusionné", each Text.Combine({[Prénom collaborateur], " ", [Nom collaborateur]}), type text),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Colonne fusionnée insérée",{{"Fusionné", "Nom"}}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Colonnes renommées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Lignes vides supprimées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

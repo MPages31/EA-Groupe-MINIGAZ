@@ -1,0 +1,90 @@
+table 'Tableaux 1'
+	lineageTag: 1d5345da-c0ff-44a6-acd3-f63b9d2e9e69
+
+	measure NbMatriculesUniques = DISTINCTCOUNT('Tableaux 1'[Matricule collaborateur])
+		formatString: 0
+		lineageTag: f22ade3a-ac15-45b4-b3c7-72aa3bbec340
+
+	measure TauxMatriculesUniques =
+			DIVIDE(
+			    DISTINCTCOUNT('Tableaux 1'[Matricule collaborateur]),
+			    DISTINCTCOUNT('Dim_collaborateurs'[Matricule collaborateur])
+			) * 100
+		lineageTag: f1aec0f6-73de-460f-8b90-38af052f8377
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Matricule collaborateur'
+		dataType: int64
+		formatString: 0
+		lineageTag: 89ce28e3-0e12-4816-b3b2-7538995bf929
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Demande métier (Hors formations obligatoires)'
+		dataType: string
+		lineageTag: 52169eb9-e8f1-4a12-8e35-b9283ba3dca5
+		summarizeBy: none
+		sourceColumn: Demande métier (Hors formations obligatoires)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Catégorie de la demande métier'
+		dataType: string
+		lineageTag: e6db51b0-e8d4-434a-aebc-616638f61baa
+		summarizeBy: none
+		sourceColumn: Catégorie de la demande métier
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avis manager'
+		dataType: string
+		lineageTag: 85412b4e-c264-4260-ad37-90552d6e1ca9
+		summarizeBy: none
+		sourceColumn: Avis manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Action de développement externe (formation etc)'
+		dataType: string
+		lineageTag: 0f9d65e1-6b35-4c8d-a3c9-0b3bc7229600
+		summarizeBy: none
+		sourceColumn: Action de développement externe (formation etc)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Catégorie de formation externe'
+		dataType: string
+		lineageTag: 6530b78d-777d-42e9-a5e3-4c317206080e
+		summarizeBy: none
+		sourceColumn: Catégorie de formation externe
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avis manager_1'
+		dataType: string
+		lineageTag: b198a513-2b37-4dc7-b874-e58951e6262d
+		summarizeBy: none
+		sourceColumn: Avis manager_1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Tableaux 1' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\myriam.pages\OneDrive - Butagaz\Documents\Personnel\Fichier global anonymisé EAE 2025.xlsx"), null, true),
+				    #"Tableaux 1_Sheet" = Source{[Item="Tableaux 1",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(#"Tableaux 1_Sheet", [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Statut", type text}, {"Prénom collaborateur", type text}, {"Nom collaborateur", type text}, {"Matricule collaborateur", Int64.Type}, {"Rôle collaborateur", type text}, {"Date d'embauche collaborateur", type date}, {"Catégorie contrat collaborateur", type text}, {"Entreprise collaborateur", type text}, {"Service collaborateur", type text}, {"RRH collaborateur", type any}, {"HRBP collaborateur", type any}, {"Direction collaborateur", type text}, {"Nom manager", type text}, {"Matricule manager", Int64.Type}, {"Rôle manager", type text}, {"Date d'embauche manager", type date}, {"Catégorie contrat manager", type text}, {"Entreprise manager", type text}, {"Service manager", type text}, {"Direction manager", type text}, {"Etat collaborateur", type text}, {"Date de signature du collaborateur", type date}, {"Etat manager", type text}, {"Date de signature du manager", type date}, {"Demande métier (Hors formations obligatoires)", type text}, {"Catégorie de la demande métier", type text}, {"Avis manager", type text}, {"Action de développement externe (formation etc)", type text}, {"Catégorie de formation externe", type text}, {"Avis manager_1", type text}}),
+				    #"Autres colonnes supprimées" = Table.SelectColumns(#"Type modifié",{"Matricule collaborateur", "Demande métier (Hors formations obligatoires)", "Catégorie de la demande métier", "Avis manager", "Action de développement externe (formation etc)", "Catégorie de formation externe", "Avis manager_1"}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Autres colonnes supprimées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null})))
+				in
+				    #"Lignes vides supprimées"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

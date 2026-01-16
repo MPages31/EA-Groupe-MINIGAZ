@@ -1,0 +1,425 @@
+table 'Formulaire questions'
+	lineageTag: 41114aee-f57d-4b52-a6a3-27eda0b732b8
+
+	column 'Matricule collaborateur'
+		dataType: string
+		lineageTag: 450432ae-e12e-4a21-84c5-7d7af67e65ef
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 1'
+		dataType: string
+		lineageTag: 6349d9f0-9d74-49e0-9d0e-73756a212d35
+		summarizeBy: none
+		sourceColumn: Question 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q1)'
+		dataType: string
+		lineageTag: ca32d42f-25ae-4404-beda-2f92f8313e55
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du manager (Q1)'
+		dataType: string
+		lineageTag: 7d582e43-17aa-4406-a919-592abf9b3ba5
+		summarizeBy: none
+		sourceColumn: Réponse du manager (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 2'
+		dataType: string
+		lineageTag: f7ba004b-59ac-48f7-8a9d-f046abfcdce6
+		summarizeBy: none
+		sourceColumn: Question 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q2)'
+		dataType: string
+		lineageTag: 6ab45ec7-ab68-4e6f-b0b3-ff535a52ea1b
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q2)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 3'
+		dataType: string
+		lineageTag: 61811d23-d870-42a1-8fff-f6e18ff8b48c
+		summarizeBy: none
+		sourceColumn: Question 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q3)'
+		dataType: string
+		lineageTag: c67d5453-c1e3-41d6-af89-f04538fe2b45
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 4'
+		dataType: string
+		lineageTag: b72aedf9-7651-45da-87ca-a4da6090ea47
+		summarizeBy: none
+		sourceColumn: Question 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 5'
+		dataType: string
+		lineageTag: 55fd8985-c9a9-4162-92da-5b24d2b9ece8
+		summarizeBy: none
+		sourceColumn: Question 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q5)'
+		dataType: string
+		lineageTag: 4e425d38-9d1c-44bf-b658-43cb003ad3de
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q5)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 6'
+		dataType: string
+		lineageTag: dd4549f1-e059-4238-8fb7-b129f8fab012
+		summarizeBy: none
+		sourceColumn: Question 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q6)'
+		dataType: string
+		lineageTag: 6fad349e-a563-48f7-8d8f-99dc892e89c0
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q6)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 7'
+		dataType: string
+		lineageTag: a0776af7-2ed3-4cb7-ba68-6e0cb751c945
+		summarizeBy: none
+		sourceColumn: Question 7
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q7)'
+		dataType: string
+		lineageTag: c3ce8bc0-9dc4-4086-b0f9-cfffe6103b9a
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q7)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 8'
+		dataType: string
+		lineageTag: 08db2f7c-27ab-4912-8958-c1758fd77101
+		summarizeBy: none
+		sourceColumn: Question 8
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q8)'
+		dataType: string
+		lineageTag: f3337eeb-1bf0-4eb0-8621-656b289f80a2
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q8)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 9'
+		dataType: string
+		lineageTag: 47547cef-91bd-4277-82fd-1755d76a2c2e
+		summarizeBy: none
+		sourceColumn: Question 9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q9)'
+		dataType: string
+		lineageTag: dfdca99e-e75e-4144-adde-3258969d1a8f
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q9)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 10'
+		dataType: string
+		lineageTag: b5003d54-863b-46d8-b9f6-09670d6d9759
+		summarizeBy: none
+		sourceColumn: Question 10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q10)'
+		dataType: string
+		lineageTag: 1b63ae69-37a1-4c9c-b006-65fb73d17030
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q10)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur (Q10)'
+		dataType: string
+		lineageTag: f02d7f30-e923-4596-8245-64ccd792e096
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur (Q10)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 11'
+		dataType: string
+		lineageTag: aa9fe2bd-d957-4a5c-99fd-f480be71a008
+		summarizeBy: none
+		sourceColumn: Question 11
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q11)'
+		dataType: string
+		lineageTag: 618c11f3-8a97-4d06-9ac5-2cd203d24b00
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q11)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 12'
+		dataType: string
+		lineageTag: ca5635e9-d6c1-40a7-9b6b-06e943334082
+		summarizeBy: none
+		sourceColumn: Question 12
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q12)'
+		dataType: string
+		lineageTag: abfe46f6-ba9b-43f4-a1f7-7404b33b45be
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q12)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 13'
+		dataType: string
+		lineageTag: 7f6f0c88-e064-4021-812c-c5653fba37b9
+		summarizeBy: none
+		sourceColumn: Question 13
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 14'
+		dataType: string
+		lineageTag: b1f9e93e-ece3-4fd8-816a-7d2c74e82786
+		summarizeBy: none
+		sourceColumn: Question 14
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur (taux d''atteinte global)'
+		dataType: string
+		lineageTag: 5427af10-32c3-4d8e-9526-7b2439e94bf8
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur (taux d'atteinte global)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (taux d''atteinte global)'
+		dataType: string
+		lineageTag: 030ad830-6716-4f35-b66c-08aa6edf96bc
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (taux d'atteinte global)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (objectifs futurs)'
+		dataType: string
+		lineageTag: 029512df-666c-4b36-8528-157f83543149
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (objectifs futurs)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (objectifs futurs)_1'
+		dataType: string
+		lineageTag: a09224e1-8ab9-4a5e-9289-9a4b26870817
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (objectifs futurs)_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (tableau)'
+		dataType: string
+		lineageTag: 7cd9e002-1434-4984-b030-fa4843619121
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (tableau)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (tableau)_2'
+		dataType: string
+		lineageTag: 60b7ea05-2971-450d-bcde-2f757d32c846
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (tableau)_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 1'
+		dataType: string
+		lineageTag: bb197c25-1552-4a4f-aafe-8bc3bb636e56
+		summarizeBy: none
+		sourceColumn: Complément 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 2'
+		dataType: string
+		lineageTag: 6278f580-fc95-4580-a3f1-d10a60389621
+		summarizeBy: none
+		sourceColumn: Complément 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 3'
+		dataType: string
+		lineageTag: cb51bdad-873d-4b62-aef5-579cc4066328
+		summarizeBy: none
+		sourceColumn: Complément 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 4'
+		dataType: string
+		lineageTag: 114c7892-311b-4131-abf6-cad20215c469
+		summarizeBy: none
+		sourceColumn: Complément 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 5'
+		dataType: string
+		lineageTag: d12a611a-1477-4251-a6b2-14f14c73cd27
+		summarizeBy: none
+		sourceColumn: Complément 5
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Complément 6'
+		dataType: string
+		lineageTag: e6c41c9f-20cd-4d4b-8969-df331be3f11d
+		summarizeBy: none
+		sourceColumn: Complément 6
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du manager (Q13)'
+		dataType: string
+		lineageTag: 3cbd3d6e-d5b1-4dd2-b104-cbbf035bc136
+		summarizeBy: none
+		sourceColumn: Réponse du manager (Q13)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q14)'
+		dataType: string
+		lineageTag: ac73090e-f311-4d9b-99af-4b6d29fd7fbf
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q14)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur (Q1)'
+		dataType: string
+		lineageTag: 06812d82-c5d8-4a98-9cc7-b95c52e3905c
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (Q1)'
+		dataType: string
+		lineageTag: 4dde9cd0-772d-451d-8c61-920ed8762fb6
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (Q2)'
+		dataType: string
+		lineageTag: c0e061f0-2e16-49b7-9e4d-09ae08ed51c8
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (Q2)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur (Q3)'
+		dataType: string
+		lineageTag: 42e3f3bb-f244-462f-908f-7a627801fd6d
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur (Q3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager (Q3)'
+		dataType: string
+		lineageTag: 06211e03-36f2-412c-9393-76ec05b22235
+		summarizeBy: none
+		sourceColumn: Commentaire du manager (Q3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur (Q2)'
+		dataType: string
+		lineageTag: 625f2e92-aea9-4bd4-b8ef-a85a4c31bc76
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur (Q2)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q4)'
+		dataType: string
+		lineageTag: 4406667d-1e1c-4e7e-b4eb-3f121755396b
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q4)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Formulaire questions' = m
+		mode: import
+		source =
+				let
+				    Source = Formulaire,
+				    #"Colonnes supprimées" = Table.RemoveColumns(Source,{"Statut", "Prénom collaborateur", "Nom collaborateur", "Rôle collaborateur", "Date d'embauche collaborateur", "Catégorie contrat collaborateur", "Entreprise collaborateur", "Service collaborateur", "Direction collaborateur", "Nom manager", "Matricule manager", "Rôle manager", "Date d'embauche manager", "Catégorie contrat manager", "Entreprise manager", "Service manager", "Direction manager", "Etat collaborateur", "Date de signature du collaborateur", "Etat manager", "Date de signature du manager"}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Colonnes supprimées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Valeur remplacée" = Table.ReplaceValue(#"Lignes vides supprimées","collègues","collegues",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée1" = Table.ReplaceValue(#"Valeur remplacée","année","annee",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée2" = Table.ReplaceValue(#"Valeur remplacée1","succès","succes",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée3" = Table.ReplaceValue(#"Valeur remplacée2","évolution","evolution",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée4" = Table.ReplaceValue(#"Valeur remplacée3","journée","journee",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée5" = Table.ReplaceValue(#"Valeur remplacée4","réunion","reunion",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée6" = Table.ReplaceValue(#"Valeur remplacée5","préciser","preciser",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée7" = Table.ReplaceValue(#"Valeur remplacée6","réunions","reunions",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée8" = Table.ReplaceValue(#"Valeur remplacée7","Difficultés","Difficultes",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée9" = Table.ReplaceValue(#"Valeur remplacée8","départs","departs",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée10" = Table.ReplaceValue(#"Valeur remplacée9","matérielles","materielles",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée11" = Table.ReplaceValue(#"Valeur remplacée10","préciser","preciser",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée12" = Table.ReplaceValue(#"Valeur remplacée11","équipes","equipes",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée13" = Table.ReplaceValue(#"Valeur remplacée12","équipe","equipe",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée14" = Table.ReplaceValue(#"Valeur remplacée13","prévue","prevue",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Espaces supprimés" = Table.TransformColumns(#"Valeur remplacée14",{{"Réponse du collaborateur (Q2)", Text.Trim, type text}, {"Réponse du collaborateur (Q3)", Text.Trim, type text}})
+				in
+				    #"Espaces supprimés"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,144 @@
+table 'Objectifs de l''année suivante'
+	lineageTag: 7318b2b2-3c44-4ccd-9b60-5425f1b1bf98
+
+	measure 'Moyenne de Nombre de Objectif par Nom 2' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('Objectifs de l''année suivante'[Matricule collaborateur])),
+				CALCULATE(COUNTA('Objectifs de l''année suivante'[Objectif]))
+			)
+		lineageTag: 2486b166-b215-4270-9e70-eedccbf565dd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Matricule collaborateur'
+		dataType: int64
+		formatString: 0
+		lineageTag: 39877f3f-f36e-46d6-9c8f-f70beb4ccdf1
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: ed6b3888-621b-4484-af62-a6711b27c8c8
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Catégorie
+		dataType: string
+		lineageTag: 8c1cd096-c9d3-405a-8a51-b13605c155d8
+		summarizeBy: none
+		sourceColumn: Catégorie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pondération
+		dataType: string
+		lineageTag: 315d244d-d071-43d1-bbb7-5588bb9a5dfe
+		summarizeBy: none
+		sourceColumn: Pondération
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cible
+		dataType: string
+		lineageTag: 5ff8e6bf-cc1c-4adf-bca0-1e081260c6c8
+		summarizeBy: none
+		sourceColumn: Cible
+
+		annotation SummarizationSetBy = Automatic
+
+	column Période
+		dataType: string
+		lineageTag: 2add9074-6831-47f6-9f59-8358d9f87dd9
+		summarizeBy: none
+		sourceColumn: Période
+
+		annotation SummarizationSetBy = Automatic
+
+	column Obsolète
+		dataType: string
+		lineageTag: 3978ba7c-7f2e-4b28-b055-8aebb009f0ce
+		summarizeBy: none
+		sourceColumn: Obsolète
+
+		annotation SummarizationSetBy = Automatic
+
+	column Suricate =
+			
+			IF(
+			    CONTAINSSTRING('Objectifs de l''année suivante'[Description], "suricate"),
+			    'Objectifs de l''année suivante'[Description],
+			    BLANK()
+			)
+		lineageTag: d8ce0ad3-c61b-41e5-b2f8-a2613d427056
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Objectif
+		dataType: string
+		lineageTag: b337c0d8-22b0-49f3-a301-708b4999020b
+		summarizeBy: none
+		sourceColumn: Objectif
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 24f8fdb0-732f-4ea2-aa90-e98cd367fdd9
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager'
+		dataType: string
+		lineageTag: 0a96d2d7-1fe2-4f26-b2b2-ba036040555f
+		summarizeBy: none
+		sourceColumn: Commentaire du manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur'
+		dataType: string
+		lineageTag: 95857c77-eaae-461a-a2f1-45b38fbe9237
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Objectifs de l''année suivante' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\myriam.pages\OneDrive - Butagaz\Documents\Personnel\Fichier global anonymisé EAE 2025.xlsx"), null, true),
+				    #"Objectifs de l'année suivante_Sheet" = Source{[Item="Objectifs de l'année suivante",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(#"Objectifs de l'année suivante_Sheet", [PromoteAllScalars=true]),
+				    #"Type modifié" = Table.TransformColumnTypes(#"En-têtes promus",{{"Statut", type text}, {"Prénom collaborateur", type text}, {"Nom collaborateur", type text}, {"Matricule collaborateur", Int64.Type}, {"Rôle collaborateur", type text}, {"Date d'embauche collaborateur", type date}, {"Catégorie contrat collaborateur", type text}, {"Entreprise collaborateur", type text}, {"Service collaborateur", type text}, {"Direction collaborateur", type text}, {"Nom manager", type text}, {"Matricule manager", Int64.Type}, {"Rôle manager", type text}, {"Date d'embauche manager", type date}, {"Catégorie contrat manager", type text}, {"Entreprise manager", type any}, {"Service manager", type text}, {"Direction manager", type text}, {"Etat collaborateur", type text}, {"Date de signature du collaborateur", type date}, {"Etat manager", type text}, {"Date de signature du manager", type date}, {"Objectif", type text}, {"Type", type text}, {"Description", type text}, {"Column26", type any}, {"Catégorie", type text}, {"Période", type text}, {"Pondération", type text}, {"Cible", type text}, {"Commentaire du collaborateur", type text}, {"Commentaire du manager", type text}, {"Obsolète", type text}, {"Column34", type any}}),
+				    #"Autres colonnes supprimées" = Table.SelectColumns(#"Type modifié",{"Matricule collaborateur", "Objectif", "Type", "Description", "Column26", "Catégorie", "Pondération", "Cible", "Période", "Commentaire du collaborateur", "Commentaire du manager", "Obsolète", "Column34"}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Autres colonnes supprimées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Lignes vides supprimées",{"Column34", "Column26"}),
+				    #"Personnalisée ajoutée" = Table.AddColumn(#"Colonnes supprimées", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Personnalisée ajoutée1" = Table.AddColumn(#"Personnalisée ajoutée", "Personnalisé.1", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées1" = Table.RemoveColumns(#"Personnalisée ajoutée1",{"Objectif"}),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Colonnes supprimées1",{{"Personnalisé", "Objectif"}}),
+				    #"Colonnes supprimées2" = Table.RemoveColumns(#"Colonnes renommées",{"Description"}),
+				    #"Colonnes renommées1" = Table.RenameColumns(#"Colonnes supprimées2",{{"Personnalisé.1", "Description"}}),
+				    #"Personnalisée ajoutée2" = Table.AddColumn(#"Colonnes renommées1", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées3" = Table.RemoveColumns(#"Personnalisée ajoutée2",{"Commentaire du manager"}),
+				    #"Colonnes renommées2" = Table.RenameColumns(#"Colonnes supprimées3",{{"Personnalisé", "Commentaire du manager"}}),
+				    #"Personnalisée ajoutée3" = Table.AddColumn(#"Colonnes renommées2", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées4" = Table.RemoveColumns(#"Personnalisée ajoutée3",{"Commentaire du collaborateur"}),
+				    #"Colonnes renommées3" = Table.RenameColumns(#"Colonnes supprimées4",{{"Personnalisé", "Commentaire du collaborateur"}})
+				in
+				    #"Colonnes renommées3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

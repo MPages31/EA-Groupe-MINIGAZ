@@ -1,0 +1,335 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "e53438255c01d00a9d74",
+  "position": {
+    "x": 213.98345668262951,
+    "y": 554.5162694678894,
+    "z": 8000,
+    "height": 149.55832993947226,
+    "width": 766.19882876683471,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Matricule collaborateur"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Matricule collaborateur",
+              "nativeQueryRef": "Matricule collaborateur"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q1)"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Réponse du collaborateur (Q1)",
+              "nativeQueryRef": "Réponse du collaborateur (Q1)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q2)"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Réponse du collaborateur (Q2)",
+              "nativeQueryRef": "Réponse du collaborateur (Q2)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q3)"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Réponse du collaborateur (Q3)",
+              "nativeQueryRef": "Réponse du collaborateur (Q3)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q9)"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Réponse du collaborateur (Q9)",
+              "nativeQueryRef": "Réponse du collaborateur (Q9)"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Form question - influenceurs clés"
+                    }
+                  },
+                  "Property": "Réponse du collaborateur (Q10)"
+                }
+              },
+              "queryRef": "Form question - influenceurs clés.Réponse du collaborateur (Q10)",
+              "nativeQueryRef": "Réponse du collaborateur (Q10)"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Form question - influenceurs clés"
+                  }
+                },
+                "Property": "Matricule collaborateur"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.5212011319859D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Form question - influenceurs clés.Matricule collaborateur"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.12176416366432D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Form question - influenceurs clés.Réponse du collaborateur (Q1)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "193.59020518649436D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Form question - influenceurs clés.Réponse du collaborateur (Q2)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "191.57954390699257D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Form question - influenceurs clés.Réponse du collaborateur (Q3)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "123.12176416366432D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Form question - influenceurs clés.Réponse du collaborateur (Q9)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "keepLayerOrder": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 6,
+                      "Percent": -0.5
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "7D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#177BB0'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

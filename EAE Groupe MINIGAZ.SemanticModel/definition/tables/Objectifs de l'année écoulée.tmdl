@@ -1,0 +1,163 @@
+table 'Objectifs de l''année écoulée'
+	lineageTag: 80dd5696-3297-4551-a353-283a548071b5
+
+	measure 'Moyenne de Nombre de Objectif par Nom' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('Objectifs de l''année écoulée'[Matricule collaborateur])),
+				CALCULATE(COUNTA('Objectifs de l''année écoulée'[Objectif]))
+			)
+		lineageTag: 3ff8a1de-da8c-4cd8-9934-805b7cf7dc28
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Matricule collaborateur'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b4eebd4-171a-48b6-92d2-4570dabba43a
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: a0cea0e9-dc85-41dc-8b05-4009024f2893
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Catégorie
+		dataType: string
+		lineageTag: 4ae5f2c9-8570-4272-bfc7-91d06c0d0e70
+		summarizeBy: none
+		sourceColumn: Catégorie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Période
+		dataType: string
+		lineageTag: 05f78830-4384-485a-b17b-b098747f17a7
+		summarizeBy: none
+		sourceColumn: Période
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pondération
+		dataType: string
+		lineageTag: 9ab79b06-0405-4333-a119-536df580a1c8
+		summarizeBy: none
+		sourceColumn: Pondération
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cible
+		dataType: string
+		lineageTag: 159470c1-b87b-482a-bdb7-a685151df35c
+		summarizeBy: none
+		sourceColumn: Cible
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Évaluation manager'
+		dataType: string
+		lineageTag: 35671bf2-375e-46c7-a3a9-5a884b126c27
+		summarizeBy: none
+		sourceColumn: Évaluation manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Taux d''atteinte (manager)'
+		dataType: string
+		lineageTag: 9e3e8505-cc10-4e6a-a4b1-0676bc1e63d7
+		summarizeBy: none
+		sourceColumn: Taux d'atteinte (manager)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Évaluation collaborateur'
+		dataType: string
+		lineageTag: 57386646-1408-43ef-b585-038f1a3f025d
+		summarizeBy: none
+		sourceColumn: Évaluation collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Taux d''atteinte (collaborateur)'
+		dataType: string
+		lineageTag: 514f267b-8fe0-4b90-9aab-c4bba75bcd3c
+		summarizeBy: none
+		sourceColumn: Taux d'atteinte (collaborateur)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Obsolète
+		dataType: string
+		lineageTag: ca786d6a-58b0-4c62-a9d4-34f9fdfe9f92
+		summarizeBy: none
+		sourceColumn: Obsolète
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 242b269b-ee22-46ab-905b-40d9f3fe89ee
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du collaborateur'
+		dataType: string
+		lineageTag: 83b5c1d6-bb7d-46af-813d-d4e0d4f97e06
+		summarizeBy: none
+		sourceColumn: Commentaire du collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Commentaire du manager'
+		dataType: string
+		lineageTag: 188cc246-dd3e-4945-bf36-f81fc771c55c
+		summarizeBy: none
+		sourceColumn: Commentaire du manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column Objectif
+		dataType: string
+		lineageTag: 9957f233-6694-49f2-9673-f051751ef046
+		summarizeBy: none
+		sourceColumn: Objectif
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Objectifs de l''année écoulée' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\myriam.pages\OneDrive - Butagaz\Documents\Personnel\Fichier global anonymisé EAE 2025.xlsx"), null, true),
+				    #"Objectifs de l'année écoulée_Sheet" = Source{[Item="Objectifs de l'année écoulée",Kind="Sheet"]}[Data],
+				    #"En-têtes promus" = Table.PromoteHeaders(#"Objectifs de l'année écoulée_Sheet", [PromoteAllScalars=true]),
+				    #"Autres colonnes supprimées" = Table.SelectColumns(#"En-têtes promus",{"Matricule collaborateur", "Objectif", "Type", "Description", "Catégorie", "Période", "Pondération", "Cible", "Évaluation manager", "Taux d'atteinte (manager)", "Évaluation collaborateur", "Taux d'atteinte (collaborateur)", "Commentaire du collaborateur", "Commentaire du manager", "Obsolète"}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Autres colonnes supprimées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Lignes vides supprimées",{{"Matricule collaborateur", Int64.Type}}),
+				    #"Personnalisée ajoutée" = Table.AddColumn(#"Type modifié", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Personnalisée ajoutée",{"Description"}),
+				    #"Colonnes renommées" = Table.RenameColumns(#"Colonnes supprimées",{{"Personnalisé", "Description"}}),
+				    #"Personnalisée ajoutée1" = Table.AddColumn(#"Colonnes renommées", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées1" = Table.RemoveColumns(#"Personnalisée ajoutée1",{"Commentaire du collaborateur"}),
+				    #"Colonnes renommées1" = Table.RenameColumns(#"Colonnes supprimées1",{{"Personnalisé", "Commentaire du collaborateur"}}),
+				    #"Personnalisée ajoutée2" = Table.AddColumn(#"Colonnes renommées1", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées2" = Table.RemoveColumns(#"Personnalisée ajoutée2",{"Commentaire du manager"}),
+				    #"Colonnes renommées2" = Table.RenameColumns(#"Colonnes supprimées2",{{"Personnalisé", "Commentaire du manager"}}),
+				    #"Personnalisée ajoutée3" = Table.AddColumn(#"Colonnes renommées2", "Personnalisé", each "CONTENU MASQUE"),
+				    #"Colonnes supprimées3" = Table.RemoveColumns(#"Personnalisée ajoutée3",{"Objectif"}),
+				    #"Colonnes renommées3" = Table.RenameColumns(#"Colonnes supprimées3",{{"Personnalisé", "Objectif"}})
+				in
+				    #"Colonnes renommées3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

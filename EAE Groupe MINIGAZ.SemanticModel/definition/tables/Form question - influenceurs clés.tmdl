@@ -1,0 +1,158 @@
+table 'Form question - influenceurs clés'
+	lineageTag: d26a5d0f-e7f1-4761-9347-bfddc11189a4
+
+	column 'Matricule collaborateur'
+		dataType: string
+		lineageTag: 8fcf2384-27ad-4456-bbd1-d53a01b628eb
+		summarizeBy: none
+		sourceColumn: Matricule collaborateur
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 1'
+		dataType: string
+		lineageTag: fe6039e8-c292-4231-88dc-8d32b93b6fb6
+		summarizeBy: none
+		sourceColumn: Question 1
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q1)'
+		dataType: string
+		lineageTag: 89c40848-96db-47c9-a3cc-98ccffe15bdb
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du manager (Q1)'
+		dataType: string
+		lineageTag: 2d7e4e7c-306f-4d26-b8d4-d14d5e0584f1
+		summarizeBy: none
+		sourceColumn: Réponse du manager (Q1)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 2'
+		dataType: string
+		lineageTag: b2efaf95-bd7b-452e-964e-657bc78371d5
+		summarizeBy: none
+		sourceColumn: Question 2
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q2)'
+		dataType: string
+		lineageTag: 939a36c5-01e3-498e-9f58-ad794b1a065d
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q2)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 3'
+		dataType: string
+		lineageTag: 62ccfc7d-7b78-49f6-91d4-401f91de7987
+		summarizeBy: none
+		sourceColumn: Question 3
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q3)'
+		dataType: string
+		lineageTag: 2d933e81-0683-4ecc-83b2-69f289f1b633
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q3)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 4'
+		dataType: string
+		lineageTag: 0638d96b-cea6-4397-8f7f-07ceca3cbd29
+		summarizeBy: none
+		sourceColumn: Question 4
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 9'
+		dataType: string
+		lineageTag: 2e1ce55c-6b44-44f1-953f-eb634beb1468
+		summarizeBy: none
+		sourceColumn: Question 9
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q9)'
+		dataType: string
+		lineageTag: 4e3bd7a1-ed4a-4d34-bee2-040cd172ad40
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q9)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Question 10'
+		dataType: string
+		lineageTag: c3294407-c8d5-4b7d-84ae-fc6a07daea34
+		summarizeBy: none
+		sourceColumn: Question 10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q10)'
+		dataType: string
+		lineageTag: 01d036fe-c058-498d-895a-269ba91afb8e
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q10)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Réponse du collaborateur (Q4)'
+		dataType: string
+		lineageTag: 7cb84676-9742-4c02-8ca1-0d6939fe7617
+		summarizeBy: none
+		sourceColumn: Réponse du collaborateur (Q4)
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Form question - influenceurs clés' = m
+		mode: import
+		source =
+				let
+				    Source = Formulaire,
+				    #"Colonnes supprimées" = Table.RemoveColumns(Source,{"Statut", "Prénom collaborateur", "Nom collaborateur", "Rôle collaborateur", "Date d'embauche collaborateur", "Catégorie contrat collaborateur", "Entreprise collaborateur", "Service collaborateur", "Direction collaborateur", "Nom manager", "Matricule manager", "Rôle manager", "Date d'embauche manager", "Catégorie contrat manager", "Entreprise manager", "Service manager", "Direction manager", "Etat collaborateur", "Date de signature du collaborateur", "Etat manager", "Date de signature du manager"}),
+				    #"Lignes vides supprimées" = Table.SelectRows(#"Colonnes supprimées", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {"", null}))),
+				    #"Valeur remplacée" = Table.ReplaceValue(#"Lignes vides supprimées","collègues","collegues",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée1" = Table.ReplaceValue(#"Valeur remplacée","année","annee",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée2" = Table.ReplaceValue(#"Valeur remplacée1","succès","succes",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée3" = Table.ReplaceValue(#"Valeur remplacée2","évolution","evolution",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée4" = Table.ReplaceValue(#"Valeur remplacée3","journée","journee",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée5" = Table.ReplaceValue(#"Valeur remplacée4","réunion","reunion",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée6" = Table.ReplaceValue(#"Valeur remplacée5","préciser","preciser",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée7" = Table.ReplaceValue(#"Valeur remplacée6","réunions","reunions",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Valeur remplacée8" = Table.ReplaceValue(#"Valeur remplacée7","Difficultés","Difficultes",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée9" = Table.ReplaceValue(#"Valeur remplacée8","départs","departs",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée10" = Table.ReplaceValue(#"Valeur remplacée9","matérielles","materielles",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée11" = Table.ReplaceValue(#"Valeur remplacée10","préciser","preciser",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée12" = Table.ReplaceValue(#"Valeur remplacée11","équipes","equipes",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée13" = Table.ReplaceValue(#"Valeur remplacée12","équipe","equipe",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée14" = Table.ReplaceValue(#"Valeur remplacée13","prévue","prevue",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Colonnes supprimées1" = Table.RemoveColumns(#"Valeur remplacée14",{"Commentaire du collaborateur (Q1)", "Commentaire du manager (Q1)", "Commentaire du collaborateur (Q2)", "Commentaire du manager (Q2)", "Commentaire du collaborateur (Q3)", "Commentaire du manager (Q3)", "Question 5", "Réponse du collaborateur (Q5)", "Question 6", "Réponse du collaborateur (Q6)", "Question 7", "Réponse du collaborateur (Q7)", "Question 8", "Réponse du collaborateur (Q8)", "Commentaire du collaborateur (Q10)", "Question 11", "Réponse du collaborateur (Q11)", "Question 12", "Réponse du collaborateur (Q12)", "Question 13", "Réponse du manager (Q13)", "Question 14", "Réponse du collaborateur (Q14)", "Commentaire du collaborateur (taux d'atteinte global)", "Commentaire du manager (taux d'atteinte global)", "Commentaire du manager (objectifs futurs)", "Commentaire du manager (objectifs futurs)_1", "Commentaire du manager (tableau)", "Commentaire du manager (tableau)_2", "Complément 1", "Complément 2", "Complément 3", "Complément 4", "Complément 5", "Complément 6"}),
+				    #"Fractionner la colonne par délimiteur" = Table.ExpandListColumn(Table.TransformColumns(#"Colonnes supprimées1", {{"Réponse du collaborateur (Q2)", Splitter.SplitTextByDelimiter(",", QuoteStyle.None), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Réponse du collaborateur (Q2)"),
+				    #"Type modifié" = Table.TransformColumnTypes(#"Fractionner la colonne par délimiteur",{{"Réponse du collaborateur (Q2)", type text}}),
+				    #"Valeur remplacée15" = Table.ReplaceValue(#"Type modifié","absences, departs","absences departs",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée16" = Table.ReplaceValue(#"Valeur remplacée15","prestataires, fournisseurs, clients","prestataires fournisseurs clients",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée17" = Table.ReplaceValue(#"Valeur remplacée16","crises, loi Climat","crises loi Climat",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Valeur remplacée18" = Table.ReplaceValue(#"Valeur remplacée17","IT, equipement","IT equipement",Replacer.ReplaceText,{"Réponse du collaborateur (Q3)"}),
+				    #"Fractionner la colonne par délimiteur1" = Table.ExpandListColumn(Table.TransformColumns(#"Valeur remplacée18", {{"Réponse du collaborateur (Q3)", Splitter.SplitTextByDelimiter(",", QuoteStyle.None), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Réponse du collaborateur (Q3)"),
+				    #"Type modifié1" = Table.TransformColumnTypes(#"Fractionner la colonne par délimiteur1",{{"Réponse du collaborateur (Q3)", type text}}),
+				    #"Espaces supprimés" = Table.TransformColumns(#"Type modifié1",{{"Réponse du collaborateur (Q3)", Text.Trim, type text}, {"Réponse du collaborateur (Q2)", Text.Trim, type text}}),
+				    #"Valeur remplacée19" = Table.ReplaceValue(#"Espaces supprimés","Les moments forts (conventions","Les moments forts (conventions reunions journee bleue)",Replacer.ReplaceText,{"Réponse du collaborateur (Q2)"}),
+				    #"Lignes filtrées" = Table.SelectRows(#"Valeur remplacée19", each [#"Réponse du collaborateur (Q2)"] <> "journee bleue)" and [#"Réponse du collaborateur (Q2)"] <> "reunions"),
+				    #"Fractionner la colonne par délimiteur2" = Table.ExpandListColumn(Table.TransformColumns(#"Lignes filtrées", {{"Réponse du collaborateur (Q10)", Splitter.SplitTextByDelimiter(",", QuoteStyle.None), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), "Réponse du collaborateur (Q10)"),
+				    #"Type modifié2" = Table.TransformColumnTypes(#"Fractionner la colonne par délimiteur2",{{"Réponse du collaborateur (Q10)", type text}})
+				in
+				    #"Type modifié2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

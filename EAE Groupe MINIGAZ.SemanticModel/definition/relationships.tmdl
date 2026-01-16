@@ -1,0 +1,24 @@
+relationship 4feeb5a9-d3b0-e776-b946-76ea9d3a66ba
+	fromColumn: 'Objectifs de l''année écoulée'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
+relationship 17d91bf8-f289-3de0-df36-6a5957f19846
+	fromColumn: 'Tableaux 3'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
+relationship f10375d3-a284-f321-a1f9-2331ed41fcb4
+	fromColumn: 'Tableaux 1'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
+relationship 82cd4af2-8914-be70-5102-b090bcec024d
+	fromColumn: 'Objectifs de l''année suivante'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
+relationship 60dc11cd-4823-e0cd-594f-b08a5abb25a3
+	fromColumn: 'Formulaire questions'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
+relationship AutoDetected_9d70dce9-51ca-4a8f-97c8-53dcacd7814a
+	fromColumn: 'Form question - influenceurs clés'.'Matricule collaborateur'
+	toColumn: Dim_collaborateurs.'Matricule collaborateur'
+
