@@ -1,11 +1,11 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "SemanticModel",
+    "type": "Report",
     "displayName": "EAE Groupe MINIGAZ"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "64c48ee8-632d-4d02-9738-29233171f7ea"
+    "logicalId": "b36c6327-4a3c-496d-9572-19810125a997"
   }
 }
